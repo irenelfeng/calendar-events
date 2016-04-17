@@ -1,0 +1,30 @@
+{
+  "name": "calendar-events",
+  "version": "1.0.0",
+  "description": "JS Calendar App, make events. ",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irenelfeng/calendar-events.git"
+  },
+  "author": "irenefeng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irenelfeng/calendar-events/issues"
+  },
+  "homepage": "https://github.com/irenelfeng/calendar-events#readme",
+  "scripts": {
+    "build": "browserify -t [ babelify --presets [ es2015 react ] ] app/index.js -o build/bundle.js"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "jquery": "^2.2.3",
+    "moment": "^2.12.0",
+    "react": "^15.0.1",
+    "react-big-calendar": "^0.9.11",
+    "react-dom": "^15.0.1",
+    "reactify": "^1.1.1"
+  }
+}
