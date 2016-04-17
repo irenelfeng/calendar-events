@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import moment from 'moment';
-//import BigCalendar from 'react-big-calendar';
 import $ from 'jquery'
-//import { Calendar } from 'react-calendar-component';
-import Calendar from './components/calendar/calendar';
+import Calendar from './components/calendar';
 import Modal from 'react-modal';
 
 class Main extends React.Component { 
@@ -74,7 +72,7 @@ class Main extends React.Component {
 		if(this.state.adding)
       		var adding = (<Modal isOpen={this.state.adding} onRequestClose={this.closeModal.bind(this)} style={this.smallerCustomStyles}>
       			<div className="event-view">
-      				<h3>Event</h3>
+      				<h4>Event for {this.state.dateToAdd.format('MM-DD')}</h4>
       					<div className="form-group">
       						<div className="form-aligned-col1">Title:</div> <input className="form-aligned-col2" id="modal-title" defaultValue={this.state.Event ? this.state.Event.title : ""}/> 
       					</div>

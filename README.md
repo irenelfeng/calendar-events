@@ -1,4 +1,5 @@
 #calendar-events 
+Calendar app to manage events in react
 
 ##Installations: 
 Install npm
