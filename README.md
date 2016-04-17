@@ -2,7 +2,11 @@
 
 ##Installations: 
 Install npm
-npm i
+``npm i``
+
+## Run the build
+``npm run build``
+Open `app/index.html`
 
 
 
