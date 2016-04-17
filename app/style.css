@@ -56,6 +56,11 @@ body {
 
 }
 
+.plus {
+  border-radius: 50px;
+  background-color: #eee;
+}
+
 .Event{ 
   cursor: pointer;
   border-radius: 5px;

@@ -50,13 +50,21 @@ class Main extends React.Component {
   					date: this.state.dateToAdd._d };
   		if(this.state.Event == null){
   			// if new event
-  			this.myEventsList.push(saving)
+  			this.myEventsList.push(saving);
   		}else{
   			// if editing
   			var edited = this.myEventsList.filter(e => e.title == this.state.Event.title)[0];
   			for (var key in edited) {
           		edited[key] = saving[key];
         	}
+  		}
+  		this.closeModal();
+  	}
+
+  	deleteEvent(){
+  		var e = this.myEventsList.filter(e => e.title == this.state.Event.title)[0];
+  		if(e){
+  			this.myEventsList.splice(this.myEventsList.indexOf(e), 1);
   		}
   		this.closeModal();
   	}
@@ -76,6 +84,7 @@ class Main extends React.Component {
   				<div className="event-buttons">
           			<div className="event-cancel" onClick={this.closeModal.bind(this)}> Cancel </div>
           			<div className="event-done" onClick={this.saveEvent.bind(this)}> Done </div>
+          			{this.state.Event ? <div className="event-done" onClick={this.deleteEvent.bind(this)}> Delete </div> : null}
         		</div>
       			</div>
        		</Modal>);

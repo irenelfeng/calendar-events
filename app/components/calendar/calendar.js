@@ -1,7 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 import { range, takeWhile, last } from 'lodash';
-//import EventView from 'event';
 
 export default class Calendar extends React.Component {
 
@@ -50,10 +49,9 @@ export default class Calendar extends React.Component {
           {this.createDateObjects(this.props.date, this.props.weekOffset).map((day, i) =>
             <div
               key={`day-${i}`}
-              onClick={this.props.onPickDate.bind(this, null, day.day)}
               className={`Calendar-grid-item ${day.classNames || ''}`}
             >
-              <span> {this.renderDay(day.day)} </span>
+              <span>{this.renderDay(day.day) + " "}<sup className="plus" onClick={this.props.onPickDate.bind(this, null, day.day)}>+ </sup></span>
               {this.props.events.filter(e => 
                 (e.date.getMonth() == day.day._d.getMonth() && e.date.getFullYear() == day.day._d.getFullYear() && e.date.getDate() == day.day._d.getDate())
                 ).map((Event) => 
